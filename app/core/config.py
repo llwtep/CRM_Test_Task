@@ -6,6 +6,9 @@ class Settings(BaseSettings):
     REDIS_PORT: int
     GROQ_API_KEY:str
     DATABASE_URL_SYNC:str
+    POSTGRES_USER:str
+    POSTGRES_PASSWORD:str
+    POSTGRES_DB:str
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 settings = Settings()
