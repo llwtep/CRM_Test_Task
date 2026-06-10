@@ -64,4 +64,19 @@ This project provides a robust RESTful API for managing educational center workf
 
 ## Future Improvements
 
-- This section is reserved for future enhancements
+This project can be further enhanced in several directions to improve scalability, security, and maintainability:
+
+- **Migration from integer IDs to UUIDs**  
+  The current implementation uses auto-incrementing integer IDs for database tables. While this approach is sufficient for the current scope and simplifies testing and debugging, switching to UUIDs would improve security and reduce predictability of record identifiers in a production environment.
+
+- **Asynchronous processing of AI operations**  
+  AI-related requests could be moved to background jobs using a task queue system such as Celery. This would decouple heavy processing from the main request-response cycle, improving overall API responsiveness and system scalability.
+
+- **Role-based authentication and authorization (RBAC)**  
+  Introducing an authentication system with role-based permissions would allow finer control over access to CRM operations. Different roles (e.g., admin, teacher, manager) could have restricted or extended permissions depending on their responsibilities.
+
+- **Caching layer for frequently accessed data**  
+  Implementing caching (e.g., Redis) for high-frequency read operations such as attendance records and group-student relationships could significantly reduce database load and improve response times.
+
+- **Dedicated read-only database user for AI services**  
+  For improved security, a separate database user with read-only permissions could be created specifically for AI-related services. This would ensure that AI components cannot modify data and would reduce the potential impact of malicious or unintended operations.
