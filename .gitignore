@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+.flaskenv
+
+# Docker
+.dockerignore
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+alembic/versions/*.pyc
+migrations/versions/*.pyc
+.DS_Store
